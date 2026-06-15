@@ -1,0 +1,47 @@
+name: Multi-OS Testing - Pulkit Sharma
+
+on:
+  push:
+    branches:
+      - master
+      - main
+
+jobs:
+
+  test-ubuntu:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Testing on Ubuntu
+        run: echo "Testing on Ubuntu..."
+
+      - name: Display OS Information
+        run: uname -a
+
+      - name: Create Test File
+        run: echo "Ubuntu test by Pulkit Sharma" > test-ubuntu.txt
+
+      - name: Display File Content
+        run: cat test-ubuntu.txt
+
+      - name: Finish Ubuntu Test
+        run: echo "Ubuntu tests completed"
+
+  test-windows:
+    runs-on: windows-latest
+
+    steps:
+      - name: Testing on Windows
+        run: echo "Testing on Windows..."
+
+      - name: Display OS Information
+        run: systeminfo
+
+      - name: Create Test File
+        run: echo Windows test by Pulkit Sharma > test-windows.txt
+
+      - name: Display File Content
+        run: type test-windows.txt
+
+      - name: Finish Windows Test
+        run: echo "Windows tests completed"
